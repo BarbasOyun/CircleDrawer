@@ -1,17 +1,18 @@
 # Circle Drawer
 
 Simple Circle Drawer with egui in Rust
+<br>
 
--Draw Circles with left click
--Use sine & cosine to create the circle points
+-Draw Circles with left click<br>
+-Use sine & cosine to create the circle points<br>
 
-Circles Options :
--Radius (Change with mousewheel)
--Segments
+Circles Options :<br>
+-Radius (Change with mousewheel)<br>
+-Segments<br>
 
-Stroke Options :
--Width
--Color
+Stroke Options :<br>
+-Width<br>
+-Color<br>
 
 ## Images
 
