@@ -6,18 +6,18 @@ use eframe::egui::*;
 #[cfg(not(target_arch = "wasm32"))]
 fn main() -> eframe::Result {
     let mut circle_drawer = CircleDrawer::new();
-
-    // Draw Default Circles
-    circle_drawer.create_circle(vec2(400.0, 300.0), 100.0, 20, Color32::RED, 2.0);
-    circle_drawer.create_circle(vec2(450.0, 300.0), 150.0, 20, Color32::GREEN, 2.0);
-    circle_drawer.create_circle(vec2(500.0, 300.0), 200.0, 20, Color32::BLUE, 2.0);
+    circle_drawer.default();
 
     let options = eframe::NativeOptions {
         viewport: ViewportBuilder::default().with_inner_size([800.0, 600.0]),
         ..Default::default()
     };
 
-    return eframe::run_native("Circle Drawer", options, Box::new(|_cc| Ok(Box::new(circle_drawer))))
+    return eframe::run_native(
+        "Circle Drawer",
+        options,
+        Box::new(|_cc| Ok(Box::new(circle_drawer))),
+    );
 }
 
 #[cfg(target_arch = "wasm32")]
@@ -25,11 +25,7 @@ fn main() {
     use eframe::wasm_bindgen::JsCast as _;
 
     let mut circle_drawer = CircleDrawer::new();
-
-    // Draw Default Circles
-    circle_drawer.create_circle(vec2(400.0, 300.0), 100.0, 20, Color32::RED, 2.0);
-    circle_drawer.create_circle(vec2(450.0, 300.0), 150.0, 20, Color32::GREEN, 2.0);
-    circle_drawer.create_circle(vec2(500.0, 300.0), 200.0, 20, Color32::BLUE, 2.0);
+    circle_drawer.default();
 
     // Redirect `log` message to `console.log` and friends:
     eframe::WebLogger::init(log::LevelFilter::Debug).ok();
@@ -99,6 +95,13 @@ impl CircleDrawer {
             circles_points: vec![],
             circles_strokes: vec![],
         }
+    }
+
+    // Draw Default Circles
+    fn default(&mut self) {
+        self.create_circle(vec2(400.0, 300.0), 100.0, 20, Color32::RED, 2.0);
+        self.create_circle(vec2(450.0, 300.0), 150.0, 20, Color32::GREEN, 2.0);
+        self.create_circle(vec2(500.0, 300.0), 200.0, 20, Color32::BLUE, 2.0);
     }
 
     fn create_circle(
