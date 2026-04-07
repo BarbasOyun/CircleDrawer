@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>My Egui App</title>
+<link rel="modulepreload" href="/circle-drawer-8cb8d5365dd2db38.js" crossorigin="anonymous" integrity="sha384-YmCpSVnVBoTqpiOMj4V0p6peKEsNNm9Oa1QXir8CI26xqkzV/OJDckYYix2lMAcz"><link rel="preload" href="/circle-drawer-8cb8d5365dd2db38_bg.wasm" crossorigin="anonymous" integrity="sha384-9t3ahYNRx58KDyt4TdecG7qTpIAS14Ns+fA6OKDnPSgOhO8rT/SASbFV4aDAcFY3" as="fetch" type="application/wasm"></head>
+
+<body>
+    <canvas id="the_canvas_id" style="width: 100%; height: 100%;">/</canvas>
+
+<script type="module">
+import init, * as bindings from '/circle-drawer-8cb8d5365dd2db38.js';
+const wasm = await init({ module_or_path: '/circle-drawer-8cb8d5365dd2db38_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+
+</html>
