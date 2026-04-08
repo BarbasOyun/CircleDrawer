@@ -76,7 +76,6 @@ struct CircleDrawer {
     // TODO : Add radius limits
     stroke_color: Color32,
     stroke_width: f32,
-    // circles: Vec<u16>, // Circles IDs
     circles_position: Vec<Vec2>,
     circles_points: Vec<Vec<glam::Vec2>>,
     circles_strokes: Vec<Stroke>,
