@@ -16,5 +16,5 @@ Stroke Options :<br>
 
 ## Images
 
-![showcase_01](Assets/circle-drawer-gif-01.gif)
-![showcase_02](Assets/circle-drawer-gif-02.gif)
+![showcase_01](assets/circle-drawer-gif-01.gif)
+![showcase_02](assets/circle-drawer-gif-02.gif)
